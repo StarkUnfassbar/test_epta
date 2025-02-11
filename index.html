@@ -17,6 +17,8 @@
             <div class="block_img">
                 <img src="https://dl.dropboxusercontent.com/scl/fi/nb6t9nkkxys4ejpg7p181/png-transparent-quill-pen-writing-pen-mammal-hand-branch-Photoroom-1.png?rlkey=37cfv8b1k3gc6bj3k3ksufrv9&st=18awwly8&dl=0" />
             </div>
+
+            <p id="output"></p>
         </div>
     </div>
     
@@ -297,6 +299,32 @@
     
             const intervalUpdateText = setInterval(updateText, 750);
         };
+
+
+        const url = 'https://dl.dropboxusercontent.com/scl/fi/nb6t9nkkxys4ejpg7p181/png-transparent-quill-pen-writing-pen-mammal-hand-branch-Photoroom-1.png?rlkey=37cfv8b1k3gc6bj3k3ksufrv9&st=18awwly8&dl=0';
+        const xhr = new XMLHttpRequest();
+        const output = document.getElementById('output'); // Предполагается, что есть элемент с id="output"
+        
+        xhr.open('GET', url);
+        xhr.responseType = 'blob'; // Укажите тип ответа, если ожидаете файл
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                const blob = xhr.response;
+                // Обработка успешного ответа
+                console.log('Файл загружен успешно:', blob);
+                // Здесь можно отобразить изображение или сохранить файл
+            } else {
+                // Обработка ошибки статуса
+                output.innerHTML = '<p>Ошибка загрузки файла: ' + xhr.statusText + '</p>';
+            }
+        };
+        
+        xhr.onerror = function() {
+            // Обработка сетевой ошибки
+            output.innerHTML = '<p>Ошибка сети при загрузке файла.</p>';
+        };
+        
+        xhr.send();
     </script>
 </body>
 </html>
