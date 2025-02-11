@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="popup-loading">
+        <div class="content">
+            <div class="block_bg">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/9m0de4c822clj02fqfgvd/paper.png?rlkey=olnvvp9012n35dm29i8o1ga9v&st=eba11loc&dl=0" />
+            </div>
+            
+            <h1 class="anim_ellipsis">Совещаемся о будущем страны</h1>
+            
+            <div class="block_img">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/nb6t9nkkxys4ejpg7p181/png-transparent-quill-pen-writing-pen-mammal-hand-branch-Photoroom-1.png?rlkey=37cfv8b1k3gc6bj3k3ksufrv9&st=18awwly8&dl=0" />
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        @font-face {
+            font-family: "SimphoniaDeco";
+            src: url('https://dl.dropboxusercontent.com/scl/fi/8w9w2mblfj7kvvp5zvs5z/Simphonia-Deco.otf?rlkey=fa6q307g5ahox8id8m4b6sit4&st=rzw1lox0&dl=0');
+            
+            font-display: swap;
+        }
+        
+        .frame_header h1{
+            font-family: "SimphoniaDeco" !important;
+            font-weight: 400 !important;
+        }
+        
+        
+        
+        #popup-loading{
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 20px 0;
+            background-color: #FFF1F1;
+            z-index: 9999;
+            box-sizing: border-box;
+            
+            transition: all .3s ease;
+        }
+        
+        #popup-loading._hide{
+            opacity: 0;
+        }
+        
+        
+        #popup-loading .content{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            
+            opacity: 0;
+            transition: all .3s ease;
+        }
+        
+        #popup-loading .content._active{
+            opacity: 1;
+        }
+        
+        
+        #popup-loading .content .block_bg{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        #popup-loading .content .block_bg img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+            
+        #popup-loading .content h1{
+            color: #D53316;
+            font-family: "SimphoniaDeco", Sans-Serif;
+            font-size: 80px;
+            font-weight: 400;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 40px 0 80px;
+            line-height: 0.95;
+            pointer-events: none;
+        }
+        
+        #popup-loading .content._active h1{
+            pointer-events: auto;
+        }
+        
+        
+        #popup-loading .content .block_img img{
+            width: 420px;
+            height: 350px;
+        }
+        
+        
+        
+        
+        @media screen and (min-width: 1100px) and (max-height: 700px){
+            #popup-loading .content h1{
+                margin: 30px 0 70px;
+            }
+        }
+        
+        @media screen and (min-width: 1100px) and (max-height: 600px){
+            #popup-loading .content h1{
+                margin: 20px 0 50px;
+            }
+            
+            #popup-loading .content .block_img img{
+                width: 380px;
+                height: 300px;
+            }
+        }
+        
+        @media screen and (min-width: 1600px) and (min-height: 700px){
+            #popup-loading .content h1{
+                font-size: 100px;
+            }
+            
+            #popup-loading .content .block_img img{
+                width: 470px;
+                height: 380px;
+            }
+        }
+        
+        @media screen and (max-width: 1100px){
+            #popup-loading .content h1{
+                font-size: 70px;
+                margin: 0px 0 70px;
+            }
+            
+            #popup-loading .content .block_img img {
+                width: 480px;
+                height: 400px;
+            }
+        }
+        
+        @media screen and (max-width: 720px){
+            #popup-loading .content h1{
+                font-size: 55px;
+                margin: 0px 0 50px;
+            }
+            
+            #popup-loading .content .block_img img {
+                width: 390px;
+                height: 310px;
+            }
+        }
+        
+        @media screen and (max-width: 600px){
+            #popup-loading .content h1{
+                font-size: 50px;
+            }
+            
+            #popup-loading .content .block_img img {
+                width: 345px;
+                height: 265px;
+            }
+        }
+        
+        @media screen and (max-width: 500px){
+            #popup-loading .content h1{
+                font-size: 40px;
+            }
+            
+            #popup-loading .content .block_img img {
+                width: 300px;
+                height: 235px;
+            }
+        }
+        
+        @media screen and (max-width: 430px){
+            #popup-loading .content h1{
+                font-size: 37px;
+                margin: 0px 0 40px;
+            }
+            
+            #popup-loading .content .block_img img {
+                width: 280px;
+                height: 215px;
+            }
+        }
+        
+        @media screen and (max-width: 400px){
+            #popup-loading .content h1{
+                font-size: 34px;
+            }
+            
+            #popup-loading .content .block_img img {
+                width: 250px;
+                height: 200px;
+            }
+        }
+        
+        @media screen and (max-width: 1000px) and (max-height: 600px){
+            #popup-loading .content .block_img img {
+                width: 280px;
+                height: 220px;
+            }
+        }
+        
+        @media screen and (max-width: 600px) and (max-height: 600px){
+            #popup-loading .content h1{
+                font-size: 50px;
+            }
+        }
+        
+         @media screen and (max-width: 1000px) and (max-height: 500px){
+            #popup-loading .content h1{
+                font-size: 40px;
+                margin: 0px 0 20px;
+            }
+            
+            #popup-loading .content .block_img img {
+                width: 240px;
+                height: 190px;
+            }
+        }
+        
+        @media screen and (max-width: 1000px) and (max-height: 350px){
+            #popup-loading .content h1{
+                margin: 0;
+            }
+            
+            #popup-loading .content .block_img img {
+                width: 220px;
+                height: 170px;
+            }
+        }
+    </style>
+    
+    <script>
+        document.querySelector("body").style.overflow = "hidden";
+            
+        window.onload = function() {
+            const popupLoading = document.querySelector("#popup-loading");
+            let timerValue = 0;
+            
+            popupLoading.querySelector(".content").classList.add("_active");
+            
+            
+            const intervalPopup = setInterval(() => {
+                if (timerValue <= 100) {
+                    timerValue++;
+                } else{
+                    // setTimeout(() => {
+                    //     popupLoading.classList.add("_hide");
+                        
+                    //     setTimeout(() => {
+                    //         popupLoading.style.display = "none";
+                            
+                    //         if(!document.querySelector("#audio-notification")){
+                    //             document.querySelector("body").style.overflow = "auto";   
+                    //         }
+                            
+                    //         clearInterval(intervalPopup);
+                    //         clearInterval(intervalUpdateText);
+                    //     }, 310);
+                    // }, 500);
+                }
+            }, 60);
+    
+    
+            const textElement = document.querySelector(".anim_ellipsis");
+            const startText = textElement.innerText;
+            
+            let dotCount = 0;
+            
+            
+            function updateText() {
+                const dots = '.'.repeat(dotCount);
+                textElement.innerText = `${startText}${dots}`;
+                dotCount = (dotCount + 1) % 4;
+            }
+    
+            const intervalUpdateText = setInterval(updateText, 750);
+        };
+    </script>
+</body>
+</html>
